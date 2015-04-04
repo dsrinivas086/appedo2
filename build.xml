@@ -1,10 +1,10 @@
 <project name="app2" default="package">
-
-	<description> APP2 contains Factorial and Reversenumber </description>
 	
 	<target name="clean">
 		<delete dir="apptemp"/>
+		
 		<echo> Clean Target Called </echo>
+		
 	</target>
 	
 	<target name="compile" depends="clean">
@@ -14,19 +14,15 @@
 		<javac srcdir="src" destdir="apptemp/classes"/>
 	</target>
 	<target name="app-jar" depends="compile">
-		<jar destfile="apptemp/jars" basedir="apptemp/classes"/>
+		<jar destfile="apptemp/jars/app.jar" basedir="apptemp/classes"/>
 	</target>
 	<target name="package" depends="app-jar">
 		<war destfile="apptemp/war" webxml=" ">
+			<fileset dir="src/jsp"/>
 			<include name="*.classes"/>
 			<include name="src/*.jsp"/>
-			<exclude name="*.jars"/>
+			<exclude name="*.jar"/>
 		</war>
 	</target>
 	
-</project>
-	
-
-
-
 </project>
