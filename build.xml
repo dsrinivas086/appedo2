@@ -1,0 +1,32 @@
+<project name="app2" default="package">
+
+	<description> APP2 contains Factorial and Reversenumber </description>
+	
+	<target name="clean">
+		<delete dir="apptemp"/>
+		<echo> Clean Target Called </echo>
+	</target>
+	
+	<target name="compile" depends="clean">
+		<mkdir dir="apptemp/classes"/>
+		<mkdir dir="apptemp/jars"/>
+		<mkdir dir="apptemp/war"/>
+		<javac srcdir="src" destdir="apptemp/classes"/>
+	</target>
+	<target name="app-jar" depends="compile">
+		<jar destfile="apptemp/jars" basedir="apptemp/classes"/>
+	</target>
+	<target name="package" depends="app-jar">
+		<war destfile="apptemp/war" webxml=" ">
+			<include name="*.classes"/>
+			<include name="src/*.jsp"/>
+			<exclude name="*.jars"/>
+		</war>
+	</target>
+	
+</project>
+	
+
+
+
+</project>
