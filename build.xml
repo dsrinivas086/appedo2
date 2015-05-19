@@ -17,7 +17,7 @@
 		<jar destfile="apptemp/jars/app.jar" basedir="apptemp/classes"/>
 	</target>
 	<target name="package" depends="app-jar">
-		<war destfile="apptemp/war" webxml=" ">
+		<war destfile="apptemp/war" webxml="">
 			<fileset dir="src/jsp"/>
 			<include name="*.classes"/>
 			<include name="src/*.jsp"/>
