@@ -3,7 +3,7 @@
 	<target name="clean">
 		<delete dir="apptemp"/>
 		
-		<echo> Clean Temp Folder </echo>
+		<echo> Clean Temp </echo>
 				
 	</target>
 	
