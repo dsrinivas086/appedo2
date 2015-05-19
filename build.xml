@@ -17,10 +17,9 @@
 		<jar destfile="apptemp/jars/app.jar" basedir="apptemp/classes"/>
 	</target>
 	<target name="package" depends="app-jar">
-		<war destfile="apptemp/war/appedo2.war" webxml=" ">
+		<war destfile="apptemp/war/appedo3.war" webxml=" ">
 			<fileset dir="src/jsp"/>
 			<include name="*.classes"/>
-			<include name="src/*.jsp"/>
 			<exclude name="*.jar"/>
 		</war>
 	</target>
