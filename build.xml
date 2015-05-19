@@ -3,8 +3,8 @@
 	<target name="clean">
 		<delete dir="apptemp"/>
 		
-		<echo> Clean Target Called </echo>
-		
+		<echo> Clean Temp Folder </echo>
+				
 	</target>
 	
 	<target name="compile" depends="clean">
